@@ -30,29 +30,29 @@ public class FileMenuHandler implements ActionListener{
 	   } 
 	  
 	  
-	public static void readFromFile(File filename)  {			//method which reads the file
-		    int k = 0;
-		    String line, line2, file1 = filename.getAbsolutePath();
-		 		DateFile = new TextFileInput(file1);
-		 			line = DateFile.readLine();
+   public static void readFromFile(File filename)  {			//method which reads the file
+   		int k = 0;
+		String line, line2, file1 = filename.getAbsolutePath();
+		 DateFile = new TextFileInput(file1);
+		  line = DateFile.readLine();
 
-		 			while (line!=null) {									// count the amount of tokens
-		 				DateTokens = new StringTokenizer(line,",");
-		 					tokens += DateTokens.countTokens();
-		 						line = DateFile.readLine();
+	     while (line!=null) {									// count the amount of tokens
+		    DateTokens = new StringTokenizer(line,",");
+		 	tokens += DateTokens.countTokens();
+		 		line = DateFile.readLine();
 		 				}
-		 				dateListUnsorted = new String[tokens];				// declare an array with the size of the tokens
-		 				DateFile2 = new TextFileInput(file1);
-			 			line2 = DateFile2.readLine();
+		 	dateListUnsorted = new String[tokens];				// declare an array with the size of the tokens
+		 	DateFile2 = new TextFileInput(file1);
+			 line2 = DateFile2.readLine();
 			 			
-		 					while (line2!= null) {								//while there are more lines, create tokens
-		 					DateTokens2 = new StringTokenizer(line2,",");	
-		 						while (DateTokens2.hasMoreTokens()) {				//while there are more tokens, append the tokens to the array
-		 							dateListUnsorted[k++] = DateTokens2.nextToken();		
+	          while (line2!= null) {								//while there are more lines, create tokens
+		      DateTokens2 = new StringTokenizer(line2,",");	
+		   while (DateTokens2.hasMoreTokens()) {				//while there are more tokens, append the tokens to the array
+		 	dateListUnsorted[k++] = DateTokens2.nextToken();		
 		 			}
-		 								line2= DateFile2.readLine();				//read the next line
-		 					}
-		 					printLists(dateListUnsorted);
+		 	    line2= DateFile2.readLine();				//read the next line
+		 				}
+		 		printLists(dateListUnsorted);
 		 		}
 	   				
 			  						
@@ -79,14 +79,14 @@ public class FileMenuHandler implements ActionListener{
 			}
 	    	}
 	   
-	  private void openFile() {					//method to open file
-	       JFileChooser chooser;
-	       int          status;
-	       chooser = new JFileChooser();
-	       status = chooser.showOpenDialog(null);
-	       if (status == JFileChooser.APPROVE_OPTION) 
-	          readFromFile(chooser.getSelectedFile());		
-	       else 
-	          JOptionPane.showMessageDialog(null, "File retrieval cancelled"); //if you click on cancel when searching for a file, this message appears.
+   private void openFile() {					//method to open file
+      JFileChooser chooser;
+      int          status;
+      chooser = new JFileChooser();
+      status = chooser.showOpenDialog(null);
+        if (status == JFileChooser.APPROVE_OPTION) 
+	   readFromFile(chooser.getSelectedFile());		
+	else 
+	   JOptionPane.showMessageDialog(null, "File retrieval cancelled"); //if you click on cancel when searching for a file, this message appears.
 	  }	  
 }
