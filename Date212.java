@@ -9,7 +9,7 @@ public class Date212  {
 		month = Integer.parseInt(((String) object).substring(4,6));
 		day = Integer.parseInt(((String) object).substring(6,8));
 	
-    if(((String)object).length() != 8) {
+        if(((String)object).length() != 8) {
 		throw new IllegalDate212Exception("Date length is Invalid: "+ object);	//throw exceptions if dates format is wrong
 		}
 	if(month<1 || month >12) {
