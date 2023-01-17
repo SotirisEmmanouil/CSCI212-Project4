@@ -30,8 +30,8 @@ public class DateGUI extends JFrame{
 	       setVisible(true);
 	}
 	
-  public void createFileMenu() {                //creates new file menu 
-				   JMenuItem   DateItem;
+          public void createFileMenu() {                //creates new file menu 
+				  JMenuItem   DateItem;
 				   JMenuBar    menuBar  = new JMenuBar();
 				   JMenu       fileMenu = new JMenu("File");
 				   FileMenuHandler fmh  = new FileMenuHandler(this);
